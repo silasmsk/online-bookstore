@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | Online Bookstore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="logo">Online Bookstore</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="cart.html">Cart</a>
+            <a href="orders.html">My Orders</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="books-section">
+        <div class="container">
+
+            <h2>Browse Books</h2>
+
+            <div class="book-filters">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by title or author"
+                >
+
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Fiction">Fiction</option>
+                    <option value="Classics">Classics</option>
+                    <option value="Science">Science</option>
+                    <option value="Technology">Technology</option>
+                </select>
+
+            </div>
+
+            <div id="bookContainer" class="book-grid">
+                <!-- Books will be loaded from the Catalog Service -->
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Online Bookstore</p>
+</footer>
+
+<script src="js/books.js"></script>
+
+</body>
+</html>

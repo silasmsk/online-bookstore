@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background-color: #e9eef3;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Featured Books */
+.featured {
+    padding: 60px 0;
+}
+
+.featured h2,
+.categories h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Categories */
+.categories {
+    padding: 50px 0;
+    background-color: white;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-list a {
+    background-color: #e9eef3;
+    color: #333;
+    padding: 15px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.category-list a:hover {
+    background-color: #d7dee5;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Book Details Page */
+
+.book-details-section {
+    padding: 60px 0;
+}
+
+.book-detail-card {
+    display: flex;
+    gap: 40px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.book-detail-card img {
+    width: 220px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.book-detail-info h2 {
+    margin-bottom: 20px;
+}
+
+.book-detail-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+button.btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Cart Page */
+
+.cart-section {
+    padding: 50px 0;
+}
+
+.cart-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 25px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.cart-item-info h3,
+.cart-item-info p {
+    margin-bottom: 10px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-button {
+    background-color: #ddd;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.cart-summary {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.cart-summary h3 {
+    margin-bottom: 15px;
+}
+
+/* Orders Page */
+
+.orders-section {
+    padding: 50px 0;
+}
+
+.orders-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.order-card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.order-card h3 {
+    margin-bottom: 15px;
+}
+
+.order-card p {
+    margin-bottom: 10px;
+}
+
+.order-card ul {
+    margin: 15px 0 15px 25px;
+}
+
+.order-card li {
+    margin-bottom: 5px;
+}
+
+/* About Page */
+
+.about-section {
+    padding: 60px 0;
+}
+
+.about-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.7;
+    font-size: 17px;
+}
