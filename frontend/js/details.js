@@ -5,7 +5,7 @@ const bookDetails = document.getElementById("bookDetails");
 
 async function loadBookDetails() {
     try {
-        const response = await fetch(`http://localhost:8080/api/books/${bookId}`);
+        const response = await fetch(`https://catalog-service-uszt.onrender.com/api/books/${bookId}`);
 
         if (!response.ok) {
             throw new Error("Book not found.");

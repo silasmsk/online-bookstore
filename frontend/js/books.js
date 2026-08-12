@@ -6,7 +6,7 @@ const categoryFilter = document.getElementById("categoryFilter");
 
 async function loadBooks() {
     try {
-        const response = await fetch("http://localhost:8080/api/books");
+        const response = await fetch("https://catalog-service-uszt.onrender.com/api/books");
 
         if (!response.ok) {
             throw new Error("Failed to load books.");

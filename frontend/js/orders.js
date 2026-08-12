@@ -2,7 +2,7 @@ const ordersContainer = document.getElementById("ordersContainer");
 
 async function loadOrders() {
     try {
-        const response = await fetch("http://localhost:8081/api/orders");
+        const response = await fetch("https://order-service-0co6.onrender.com/api/orders");
 
         if (!response.ok) {
             throw new Error("Orders could not be loaded.");

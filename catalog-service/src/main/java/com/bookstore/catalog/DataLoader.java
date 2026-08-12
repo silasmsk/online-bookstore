@@ -23,7 +23,7 @@ public class DataLoader {
                         12.99,
                         "Fiction",
                         8,
-                        "https://via.placeholder.com/180x260?text=1984"
+                        "https://ik.imagekit.io/tefd900ep/1984.webp"
                 ));
 
                 bookRepository.save(new Book(
@@ -33,7 +33,7 @@ public class DataLoader {
                         10.99,
                         "Classics",
                         5,
-                        "https://via.placeholder.com/180x260?text=Pride+and+Prejudice"
+                         "https://ik.imagekit.io/tefd900ep/pride%20and%20prejudice.jpg"
                 ));
 
                 bookRepository.save(new Book(
@@ -43,17 +43,17 @@ public class DataLoader {
                         15.99,
                         "Science",
                         6,
-                        "https://via.placeholder.com/180x260?text=Science"
+                        "https://ik.imagekit.io/tefd900ep/a%20brief%20history%20of%20time.jpg"
                 ));
 
                 bookRepository.save(new Book(
-                        "Clean Code",
-                        "Robert C. Martin",
-                        "A practical book about writing readable and maintainable software.",
+                        "The Da Vinci Code",
+                        "Dan Brown",
+                        "A mystery thriller involving secret societies, hidden clues, and a centuries-old conspiracy.",
                         24.99,
-                        "Technology",
+                        "Mystery",
                         10,
-                        "https://via.placeholder.com/180x260?text=Clean+Code"
+                        "https://ik.imagekit.io/tefd900ep/da%20vinci%20code.jpg"
                 ));
             }
         };
