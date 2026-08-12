@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,50 +10,124 @@
 
 <body>
 
-<header>
-    <div class="container">
-        <h1 class="logo">Online Bookstore</h1>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="books.html">Books</a>
-            <a href="cart.html">Cart</a>
-            <a href="orders.html">My Orders</a>
-            <a href="about.html">About</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section class="about-section">
+    <header>
         <div class="container">
+            <h1 class="logo">Online Bookstore</h1>
 
-            <h2>About Online Bookstore</h2>
-
-            <p>
-                Online Bookstore is a cloud-based web application that allows
-                users to browse books, view book details, add books to a cart,
-                and place orders.
-            </p>
-
-            <p>
-                The application is designed using a microservice architecture.
-                Book information is managed by the Catalog Service, while
-                shopping and order operations are managed by the Order Service.
-            </p>
-
-            <p>
-                The frontend communicates with the backend services using REST APIs.
-                Book cover images will be stored in cloud-based storage.
-            </p>
-
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="books.html">Books</a>
+                <a href="cart.html">Cart</a>
+                <a href="orders.html">My Orders</a>
+                <a href="about.html">About</a>
+            </nav>
         </div>
-    </section>
-</main>
+    </header>
 
-<footer>
-    <p>&copy; 2026 Online Bookstore</p>
-</footer>
+
+    <main>
+
+        <section class="about-section">
+            <div class="container">
+
+                <!-- ABOUT INTRO -->
+                <div class="about-hero">
+
+                    <span class="section-label">OUR STORY</span>
+
+                    <h2>A bookstore built for curious readers.</h2>
+
+                    <p>
+                        Online Bookstore is a simple and welcoming place
+                        to discover stories, timeless classics, modern favorites
+                        and new ideas.
+                    </p>
+
+                    <a href="books.html" class="btn">
+                        Explore Our Books
+                    </a>
+
+                </div>
+
+
+                <!-- FEATURES -->
+                <div class="about-grid">
+
+                    <div class="about-card">
+                        <div class="about-icon">📚</div>
+
+                        <h3>Discover</h3>
+
+                        <p>
+                            Explore books across different genres,
+                            from classics and fiction to science,
+                            fantasy and mystery.
+                        </p>
+                    </div>
+
+
+                    <div class="about-card">
+                        <div class="about-icon">♡</div>
+
+                        <h3>Find Your Next Read</h3>
+
+                        <p>
+                            Search by title or author, browse by category
+                            and easily discover books that match
+                            your interests.
+                        </p>
+                    </div>
+
+
+                    <div class="about-card">
+                        <div class="about-icon">☁</div>
+
+                        <h3>Cloud Powered</h3>
+
+                        <p>
+                            Built with independent services and cloud
+                            technologies to create a modern online
+                            bookstore experience.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- TECHNICAL SECTION -->
+                <div class="about-tech">
+
+                    <span class="section-label">
+                        BEHIND THE BOOKSTORE
+                    </span>
+
+                    <h3>Built with modern cloud architecture.</h3>
+
+                    <p>
+                        The bookstore uses a microservice architecture
+                        with separate Catalog and Order services.
+                        The frontend communicates with these services
+                        through REST APIs.
+                    </p>
+
+                    <p>
+                        Book and order data are stored in a cloud database,
+                        while book cover images are delivered through
+                        cloud-based image storage.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Online Bookstore</p>
+    </footer>
 
 </body>
+
 </html>

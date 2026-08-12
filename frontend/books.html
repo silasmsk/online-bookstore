@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +10,77 @@
 
 <body>
 
-<header>
-    <div class="container">
-        <h1 class="logo">Online Bookstore</h1>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="books.html">Books</a>
-            <a href="cart.html">Cart</a>
-            <a href="orders.html">My Orders</a>
-            <a href="about.html">About</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-
-    <section class="books-section">
+    <header>
         <div class="container">
+            <h1 class="logo">Online Bookstore</h1>
 
-            <h2>Browse Books</h2>
-
-            <div class="book-filters">
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search by title or author"
-                >
-
-                <select id="categoryFilter">
-                    <option value="">All Categories</option>
-                    <option value="Fiction">Fiction</option>
-                    <option value="Classics">Classics</option>
-                    <option value="Science">Science</option>
-                    <option value="Technology">Technology</option>
-                </select>
-
-            </div>
-
-            <div id="bookContainer" class="book-grid">
-                <!-- Books will be loaded from the Catalog Service -->
-            </div>
-
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="books.html">Books</a>
+                <a href="cart.html">Cart</a>
+                <a href="orders.html">My Orders</a>
+                <a href="about.html">About</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-</main>
 
-<footer>
-    <p>&copy; 2026 Online Bookstore</p>
-</footer>
+    <main>
 
-<script src="js/books.js"></script>
+        <section class="books-section">
+            <div class="container">
+
+                <h2>Browse Books</h2>
+
+                <!-- SEARCH AND FILTER PANEL -->
+                <div class="filter-panel">
+
+                    <div class="filter-title">
+                        <span>Find your next read</span>
+                        <p>Search by title, author or browse by genre.</p>
+                    </div>
+
+                    <div class="filter-controls">
+
+                        <div class="search-box">
+                            <span class="search-icon">⌕</span>
+
+                            <input type="text" id="searchInput" placeholder="Search by title or author...">
+                        </div>
+
+                        <div class="category-chips">
+                            <button class="category-chip active" data-category="">All</button>
+                            <button class="category-chip" data-category="Fiction">Fiction</button>
+                            <button class="category-chip" data-category="Classics">Classics</button>
+                            <button class="category-chip" data-category="Science">Science</button>
+                            <button class="category-chip" data-category="Fantasy">Fantasy</button>
+                            <button class="category-chip" data-category="Mystery">Mystery</button>
+                            <button class="category-chip" data-category="Romance">Romance</button>
+                            <button class="category-chip" data-category="Technology">Technology</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- BOOKS FROM CATALOG SERVICE -->
+                <div id="bookContainer" class="book-grid">
+                    <!-- Books will be loaded from the Catalog Service -->
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Online Bookstore</p>
+    </footer>
+
+
+    <script src="js/books.js"></script>
 
 </body>
+
 </html>

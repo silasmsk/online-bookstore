@@ -2,16 +2,29 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartContainer = document.getElementById("cartContainer");
 const cartTotal = document.getElementById("cartTotal");
+const cartSubtotal = document.getElementById("cartSubtotal");
 const placeOrderButton = document.getElementById("placeOrderButton");
 
 function displayCart() {
     cartContainer.innerHTML = "";
 
     if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+        cartContainer.innerHTML = `
+            <div class="empty-cart">
+                <h3>Your cart is empty.</h3>
+                <p>Browse our collection and find your next read.</p>
+                <a href="books.html" class="btn">Browse Books</a>
+            </div>
+        `;
+
         cartTotal.textContent = "0.00";
+        cartSubtotal.textContent = "0.00";
+        placeOrderButton.disabled = true;
+
         return;
     }
+
+    placeOrderButton.disabled = false;
 
     let total = 0;
 
@@ -25,25 +38,39 @@ function displayCart() {
             <img src="${item.image}" alt="${item.title}">
 
             <div class="cart-item-info">
-                <h3>${item.title}</h3>
-                <p>${item.author}</p>
-                <p>€${item.price.toFixed(2)}</p>
 
-                <div class="quantity-controls">
-                    <button onclick="decreaseQuantity(${item.id})">-</button>
-                    <span>${item.quantity}</span>
-                    <button onclick="increaseQuantity(${item.id})">+</button>
+                <h3>${item.title}</h3>
+
+                <p class="cart-author">${item.author}</p>
+
+                <p class="cart-price">
+                    €${item.price.toFixed(2)}
+                </p>
+
+                <div class="cart-actions">
+
+                    <div class="quantity-controls">
+                        <button onclick="decreaseQuantity(${item.id})">−</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="increaseQuantity(${item.id})">+</button>
+                    </div>
+
+                    <button
+                        class="remove-button"
+                        onclick="removeFromCart(${item.id})"
+                    >
+                        Remove
+                    </button>
+
                 </div>
 
-                <button class="remove-button" onclick="removeFromCart(${item.id})">
-                    Remove
-                </button>
             </div>
         `;
 
         cartContainer.appendChild(cartItem);
     });
 
+    cartSubtotal.textContent = total.toFixed(2);
     cartTotal.textContent = total.toFixed(2);
 }
 
@@ -80,6 +107,7 @@ function saveCart() {
 displayCart();
 
 placeOrderButton.addEventListener("click", async () => {
+
     if (cart.length === 0) {
         alert("Your cart is empty.");
         return;
@@ -101,27 +129,45 @@ placeOrderButton.addEventListener("click", async () => {
     };
 
     try {
-        const response = await fetch("https://order-service-0co6.onrender.com/api/orders", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newOrder)
-        });
+
+        placeOrderButton.disabled = true;
+        placeOrderButton.textContent = "Processing...";
+
+        const response = await fetch(
+            "https://order-service-0co6.onrender.com/api/orders",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newOrder)
+            }
+        );
 
         if (!response.ok) {
             throw new Error("Order could not be created.");
         }
 
         cart = [];
-        localStorage.setItem("cart", JSON.stringify(cart));
+
+        localStorage.setItem(
+            "cart",
+            JSON.stringify(cart)
+        );
 
         alert("Order placed successfully.");
 
         window.location.href = "orders.html";
 
     } catch (error) {
+
         console.error(error);
-        alert("An error occurred while placing the order.");
+
+        alert(
+            "The order service may still be starting. Please try again."
+        );
+
+        placeOrderButton.disabled = false;
+        placeOrderButton.textContent = "Place Order";
     }
 });

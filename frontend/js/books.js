@@ -2,22 +2,45 @@ let books = [];
 
 const bookContainer = document.getElementById("bookContainer");
 const searchInput = document.getElementById("searchInput");
-const categoryFilter = document.getElementById("categoryFilter");
+const categoryChips = document.querySelectorAll(".category-chip");
+
+const params = new URLSearchParams(window.location.search);
+const categoryFromUrl = params.get("category");
+
+let selectedCategory = categoryFromUrl || "";
+
+function setActiveCategory(category) {
+    categoryChips.forEach(chip => {
+        chip.classList.toggle(
+            "active",
+            chip.dataset.category === category
+        );
+    });
+}
+
+if (categoryFromUrl) {
+    setActiveCategory(categoryFromUrl);
+}
 
 async function loadBooks() {
+    bookContainer.innerHTML = "<p>Loading books...</p>";
+
     try {
-        const response = await fetch("https://catalog-service-uszt.onrender.com/api/books");
+        const response = await fetch(
+            "https://catalog-service-uszt.onrender.com/api/books"
+        );
 
         if (!response.ok) {
             throw new Error("Failed to load books.");
         }
 
         books = await response.json();
+        filterBooks();
 
-        displayBooks(books);
     } catch (error) {
         console.error(error);
-        bookContainer.innerHTML = "<p>Books could not be loaded.</p>";
+        bookContainer.innerHTML =
+            "<p>Books could not be loaded. Please try again.</p>";
     }
 }
 
@@ -25,7 +48,8 @@ function displayBooks(bookList) {
     bookContainer.innerHTML = "";
 
     if (bookList.length === 0) {
-        bookContainer.innerHTML = "<p>No books found.</p>";
+        bookContainer.innerHTML =
+            "<p class='no-books'>No books found.</p>";
         return;
     }
 
@@ -35,12 +59,21 @@ function displayBooks(bookList) {
 
         bookCard.innerHTML = `
             <img src="${book.imageUrl}" alt="${book.title}">
+
             <h3>${book.title}</h3>
+
             <p>${book.author}</p>
+
             <p>${book.category}</p>
-            <strong>€${book.price.toFixed(2)}</strong>
-            <br>
-            <a href="book-details.html?id=${book.id}" class="btn">
+
+            <strong>
+                €${book.price.toFixed(2)}
+            </strong>
+
+            <a
+                href="book-details.html?id=${book.id}"
+                class="btn"
+            >
                 View Details
             </a>
         `;
@@ -50,8 +83,8 @@ function displayBooks(bookList) {
 }
 
 function filterBooks() {
-    const searchText = searchInput.value.toLowerCase();
-    const selectedCategory = categoryFilter.value;
+    const searchText =
+        searchInput.value.trim().toLowerCase();
 
     const filteredBooks = books.filter(book => {
         const matchesSearch =
@@ -69,6 +102,15 @@ function filterBooks() {
 }
 
 searchInput.addEventListener("input", filterBooks);
-categoryFilter.addEventListener("change", filterBooks);
+
+categoryChips.forEach(chip => {
+    chip.addEventListener("click", () => {
+        selectedCategory = chip.dataset.category;
+
+        setActiveCategory(selectedCategory);
+
+        filterBooks();
+    });
+});
 
 loadBooks();

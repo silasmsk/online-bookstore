@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Bookstore</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <header>
@@ -23,45 +25,166 @@
     </header>
 
     <main>
+
+        <!-- HERO -->
         <section class="hero">
             <div class="container">
                 <h2>Discover Your Next Favorite Book</h2>
+
                 <p>
-                    Browse books from different categories and find something
-                    new to read.
+                    Browse books from different categories and find
+                    something new to read.
                 </p>
 
-                <a href="books.html" class="btn">Browse Books</a>
+                <a href="books.html" class="btn">
+                    Browse Books
+                </a>
             </div>
         </section>
 
-        <section class="featured">
+        <!-- BESTSELLERS -->
+        <section class="bestsellers">
             <div class="container">
-                <h2>Featured Books</h2>
 
-                <div id="featuredBooks" class="book-grid">
-                    <!-- Featured books will be loaded here later -->
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">
+                            READERS' FAVORITES
+                        </span>
+
+                        <h2>Bestsellers</h2>
+                    </div>
+
+                    <a href="books.html" class="view-all">
+                        View All Books →
+                    </a>
+                </div>
+
+                <div class="bestseller-grid">
+
+                    <!-- Harry Potter -->
+                    <a href="book-details.html?id=5" class="bestseller-card">
+
+                        <span class="book-number">01</span>
+
+                        <img src="https://ik.imagekit.io/tefd900ep/harry%20potter.jpg"
+                            alt="Harry Potter and the Philosopher's Stone">
+
+                        <div class="bestseller-info">
+                            <h3>
+                                Harry Potter and the Philosopher's Stone
+                            </h3>
+
+                            <p>J.K. Rowling</p>
+                        </div>
+
+                        <span class="book-arrow">→</span>
+                    </a>
+
+
+                    <!-- Percy Jackson -->
+                    <a href="book-details.html?id=6" class="bestseller-card">
+
+                        <span class="book-number">02</span>
+
+                        <img src="https://ik.imagekit.io/tefd900ep/percy%20jackson.jpg"
+                            alt="Percy Jackson and the Lightning Thief">
+
+                        <div class="bestseller-info">
+                            <h3>
+                                Percy Jackson &amp; The Lightning Thief
+                            </h3>
+
+                            <p>Rick Riordan</p>
+                        </div>
+
+                        <span class="book-arrow">→</span>
+                    </a>
+
+
+                    <!-- Fight Club -->
+                    <a href="book-details.html?id=7" class="bestseller-card">
+
+                        <span class="book-number">03</span>
+
+                        <img src="https://ik.imagekit.io/tefd900ep/fight%20club.jpg" alt="Fight Club">
+
+                        <div class="bestseller-info">
+                            <h3>Fight Club</h3>
+                            <p>Chuck Palahniuk</p>
+                        </div>
+
+                        <span class="book-arrow">→</span>
+                    </a>
+
+
+                    <!-- Wuthering Heights -->
+                    <a href="book-details.html?id=8" class="bestseller-card">
+
+                        <span class="book-number">04</span>
+
+                        <img src="https://ik.imagekit.io/tefd900ep/wuthering.jpg" alt="Wuthering Heights">
+
+                        <div class="bestseller-info">
+                            <h3>Wuthering Heights</h3>
+                            <p>Emily Brontë</p>
+                        </div>
+
+                        <span class="book-arrow">→</span>
+                    </a>
+
+
+                    <!-- Chess -->
+                    <a href="book-details.html?id=9" class="bestseller-card">
+
+                        <span class="book-number">05</span>
+
+                        <img src="https://ik.imagekit.io/tefd900ep/chess.jpg" alt="Chess">
+
+                        <div class="bestseller-info">
+                            <h3>Chess</h3>
+                            <p>Stefan Zweig</p>
+                        </div>
+
+                        <span class="book-arrow">→</span>
+                    </a>
+
                 </div>
             </div>
         </section>
 
+
+        <!-- POPULAR CATEGORIES -->
         <section class="categories">
             <div class="container">
-                <h2>Popular Categories</h2>
+
+                <div class="category-heading">
+                    <span class="section-label">
+                        EXPLORE BY GENRE
+                    </span>
+
+                    <h2>Popular Categories</h2>
+                </div>
 
                 <div class="category-list">
-                    <a href="books.html">Fiction</a>
-                    <a href="books.html">Classics</a>
-                    <a href="books.html">Science</a>
-                    <a href="books.html">Technology</a>
+                    <a href="books.html?category=Fiction">Fiction</a>
+                    <a href="books.html?category=Classics">Classics</a>
+                    <a href="books.html?category=Science">Science</a>
+                    <a href="books.html?category=Technology">Technology</a>
+                    <a href="books.html?category=Romance">Romance</a>
+                    <a href="books.html?category=Mystery">Mystery</a>
                 </div>
+
             </div>
         </section>
+
     </main>
+
 
     <footer>
         <p>&copy; 2026 Online Bookstore</p>
     </footer>
 
 </body>
+
 </html>

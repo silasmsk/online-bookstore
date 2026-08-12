@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,47 +10,73 @@
 
 <body>
 
-<header>
-    <div class="container">
-        <h1 class="logo">Online Bookstore</h1>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="books.html">Books</a>
-            <a href="cart.html">Cart</a>
-            <a href="orders.html">My Orders</a>
-            <a href="about.html">About</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section class="cart-section">
+    <header>
         <div class="container">
+            <h1 class="logo">Online Bookstore</h1>
 
-            <h2>Your Cart</h2>
-
-            <div id="cartContainer">
-                <!-- Cart items will be loaded here -->
-            </div>
-
-            <div class="cart-summary">
-                <h3>Total: €<span id="cartTotal">0.00</span></h3>
-
-                <button id="placeOrderButton" class="btn">
-                    Place Order
-                </button>
-            </div>
-
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="books.html">Books</a>
+                <a href="cart.html">Cart</a>
+                <a href="orders.html">My Orders</a>
+                <a href="about.html">About</a>
+            </nav>
         </div>
-    </section>
-</main>
+    </header>
 
-<footer>
-    <p>&copy; 2026 Online Bookstore</p>
-</footer>
+    <main>
 
-<script src="js/cart.js"></script>
+        <section class="cart-section">
+            <div class="container">
+
+                <h2>Your Cart</h2>
+
+                <div class="cart-layout">
+
+                    <div id="cartContainer" class="cart-items">
+                        <!-- Cart items will be loaded here -->
+                    </div>
+
+                    <div class="cart-summary">
+
+                        <h3>Order Summary</h3>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>€<span id="cartSubtotal">0.00</span></span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Delivery</span>
+                            <span class="free-delivery">Free</span>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-row summary-total">
+                            <span>Total</span>
+                            <span>€<span id="cartTotal">0.00</span></span>
+                        </div>
+
+                        <button id="placeOrderButton" class="btn">
+                            Place Order
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Online Bookstore</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
 
 </body>
+
 </html>

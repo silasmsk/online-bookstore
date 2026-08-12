@@ -22,8 +22,7 @@ public class DataLoader {
                         12.99,
                         "Fiction",
                         8,
-                        "https://ik.imagekit.io/tefd900ep/1984.webp"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/1984.webp"));
             }
 
             if (!bookRepository.existsByTitle("Pride and Prejudice")) {
@@ -34,8 +33,7 @@ public class DataLoader {
                         10.99,
                         "Classics",
                         5,
-                        "https://ik.imagekit.io/tefd900ep/pride%20and%20prejudice.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/pride%20and%20prejudice.jpg"));
             }
 
             if (!bookRepository.existsByTitle("A Brief History of Time")) {
@@ -46,8 +44,7 @@ public class DataLoader {
                         15.99,
                         "Science",
                         6,
-                        "https://ik.imagekit.io/tefd900ep/a%20brief%20history%20of%20time.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/a%20brief%20history%20of%20time.jpg"));
             }
 
             if (!bookRepository.existsByTitle("The Da Vinci Code")) {
@@ -58,8 +55,7 @@ public class DataLoader {
                         24.99,
                         "Mystery",
                         10,
-                        "https://ik.imagekit.io/tefd900ep/da%20vinci%20code.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/da%20vinci%20code.jpg"));
             }
 
             if (!bookRepository.existsByTitle("Harry Potter and the Philosopher's Stone")) {
@@ -70,8 +66,7 @@ public class DataLoader {
                         18.99,
                         "Fantasy",
                         12,
-                        "https://ik.imagekit.io/tefd900ep/harry%20potter.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/harry%20potter.jpg"));
             }
 
             if (!bookRepository.existsByTitle("Percy Jackson & the Olympians: The Lightning Thief")) {
@@ -82,8 +77,7 @@ public class DataLoader {
                         16.99,
                         "Fantasy",
                         10,
-                        "https://ik.imagekit.io/tefd900ep/percy%20jackson.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/percy%20jackson.jpg"));
             }
 
             if (!bookRepository.existsByTitle("Fight Club")) {
@@ -94,8 +88,7 @@ public class DataLoader {
                         14.99,
                         "Fiction",
                         7,
-                        "https://ik.imagekit.io/tefd900ep/fight%20club.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/fight%20club.jpg"));
             }
 
             if (!bookRepository.existsByTitle("Wuthering Heights")) {
@@ -106,8 +99,7 @@ public class DataLoader {
                         11.99,
                         "Classics",
                         8,
-                        "https://ik.imagekit.io/tefd900ep/wuthering.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/wuthering.jpg"));
             }
 
             if (!bookRepository.existsByTitle("Chess")) {
@@ -118,8 +110,40 @@ public class DataLoader {
                         9.99,
                         "Classics",
                         9,
-                        "https://ik.imagekit.io/tefd900ep/chess.jpg"
-                ));
+                        "https://ik.imagekit.io/tefd900ep/chess.jpg"));
+            }
+
+            if (!bookRepository.existsByTitle("Me Before You")) {
+                bookRepository.save(new Book(
+                        "Me Before You",
+                        "Jojo Moyes",
+                        "A moving love story about two people whose lives change after an unexpected meeting.",
+                        13.99,
+                        "Romance",
+                        8,
+                        "https://ik.imagekit.io/tefd900ep/me-before-you-taschenbuch-jojo-moyes-englisch.webp"));
+            }
+
+            if (!bookRepository.existsByTitle("The Fault in Our Stars")) {
+                bookRepository.save(new Book(
+                        "The Fault in Our Stars",
+                        "John Green",
+                        "A heartfelt story about love, life and two teenagers who form an unexpected connection.",
+                        12.99,
+                        "Romance",
+                        7,
+                        "https://ik.imagekit.io/tefd900ep/our%20star.jpg"));
+            }
+
+            if (!bookRepository.existsByTitle("Clean Code")) {
+                bookRepository.save(new Book(
+                        "Clean Code",
+                        "Robert C. Martin",
+                        "A practical guide to writing clean, readable and maintainable software.",
+                        29.99,
+                        "Technology",
+                        6,
+                        "https://ik.imagekit.io/tefd900ep/clean%20code.jpg"));
             }
         };
     }
