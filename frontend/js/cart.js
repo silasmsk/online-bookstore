@@ -20,7 +20,6 @@ function displayCart() {
         cartTotal.textContent = "0.00";
         cartSubtotal.textContent = "0.00";
         placeOrderButton.disabled = true;
-
         return;
     }
 
@@ -38,7 +37,6 @@ function displayCart() {
             <img src="${item.image}" alt="${item.title}">
 
             <div class="cart-item-info">
-
                 <h3>${item.title}</h3>
 
                 <p class="cart-author">${item.author}</p>
@@ -48,7 +46,6 @@ function displayCart() {
                 </p>
 
                 <div class="cart-actions">
-
                     <div class="quantity-controls">
                         <button onclick="decreaseQuantity(${item.id})">−</button>
                         <span>${item.quantity}</span>
@@ -61,9 +58,7 @@ function displayCart() {
                     >
                         Remove
                     </button>
-
                 </div>
-
             </div>
         `;
 
@@ -129,10 +124,10 @@ placeOrderButton.addEventListener("click", async () => {
     };
 
     try {
-
         placeOrderButton.disabled = true;
         placeOrderButton.textContent = "Processing...";
 
+        // 1. Create the order in Order Service
         const response = await fetch(
             "https://order-service-0co6.onrender.com/api/orders",
             {
@@ -148,6 +143,31 @@ placeOrderButton.addEventListener("click", async () => {
             throw new Error("Order could not be created.");
         }
 
+        const createdOrder = await response.json();
+
+        // 2. Call the Cloudflare serverless confirmation function
+        const confirmationResponse = await fetch(
+            "https://order-confirmation.zynpslsmsk.workers.dev/",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    orderId: createdOrder.id,
+                    totalPrice: createdOrder.totalPrice
+                })
+            }
+        );
+
+        if (!confirmationResponse.ok) {
+            throw new Error("Order confirmation could not be created.");
+        }
+
+        const confirmation =
+            await confirmationResponse.json();
+
+        // 3. Clear the cart
         cart = [];
 
         localStorage.setItem(
@@ -155,16 +175,17 @@ placeOrderButton.addEventListener("click", async () => {
             JSON.stringify(cart)
         );
 
-        alert("Order placed successfully.");
+        // 4. Show the message returned by the serverless function
+        alert(confirmation.message);
 
+        // 5. Go to order history
         window.location.href = "orders.html";
 
     } catch (error) {
-
         console.error(error);
 
         alert(
-            "The order service may still be starting. Please try again."
+            "An error occurred while placing the order. Please try again."
         );
 
         placeOrderButton.disabled = false;

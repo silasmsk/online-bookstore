@@ -108,7 +108,9 @@ button.btn {
         radial-gradient(circle at top left,
             rgba(242, 194, 202, 0.45),
             transparent 35%),
-        linear-gradient(135deg, var(--cream), #f8e7dd);
+        linear-gradient(135deg,
+            var(--cream),
+            #f8e7dd);
 }
 
 .hero h2 {
@@ -127,493 +129,16 @@ button.btn {
 }
 
 /* =========================
-   SECTION HEADINGS
+   COMMON SECTION LABELS
 ========================= */
 
-.featured h2,
-.categories h2,
-.books-section h2,
-.book-details-section h2,
-.cart-section h2,
-.orders-section h2,
-.about-section h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--chocolate);
-    font-weight: normal;
-}
-
-/* =========================
-   FEATURED
-========================= */
-
-.featured {
-    padding: 65px 0;
-}
-
-.featured h2 {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 35px;
-}
-
-/* =========================
-   BOOKS PAGE
-========================= */
-
-.books-section {
-    padding: 50px 0 70px;
-}
-
-.books-section h2 {
-    font-size: 36px;
-    margin-bottom: 25px;
-}
-
-/* Search + category filter */
-
-#searchInput,
-#categoryFilter {
-    height: 44px;
-    padding: 0 14px;
-    border: 1px solid #d4c1b3;
-    border-radius: 22px;
-    background-color: var(--light-cream);
-    color: var(--text);
-    font-size: 14px;
-    margin-bottom: 30px;
-    transition: 0.2s;
-}
-
-#searchInput {
-    width: 310px;
-    max-width: 100%;
-}
-
-#categoryFilter {
-    min-width: 170px;
-    margin-left: 8px;
-}
-
-#searchInput:focus,
-#categoryFilter:focus {
-    outline: none;
-    border-color: var(--mauve);
-    box-shadow: 0 0 0 3px rgba(168, 105, 122, 0.13);
-}
-
-/* =========================
-   BOOK GRID
-========================= */
-
-.book-grid,
-#bookContainer {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 26px;
-    align-items: stretch;
-}
-
-/* =========================
-   BOOK CARD
-========================= */
-
-.book-card {
-    background-color: var(--light-cream);
-    border: 1px solid rgba(68, 48, 37, 0.07);
-    border-radius: 18px;
-    padding: 16px;
-    overflow: hidden;
-
-    box-shadow:
-        0 4px 10px rgba(68, 48, 37, 0.06),
-        0 10px 25px rgba(68, 48, 37, 0.06);
-
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.book-card:hover {
-    transform: translateY(-7px);
-
-    box-shadow:
-        0 8px 18px rgba(68, 48, 37, 0.10),
-        0 15px 30px rgba(68, 48, 37, 0.10);
-}
-
-.book-card img {
-    width: 100%;
-    height: 310px;
-    object-fit: contain;
-    background-color: #f2e8dc;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    padding: 8px;
-}
-
-.book-card h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--chocolate);
-    font-size: 21px;
-    font-weight: normal;
-    line-height: 1.3;
-    margin-bottom: 8px;
-}
-
-.book-card p {
-    color: var(--muted-text);
-    font-size: 14px;
-    margin-bottom: 7px;
-}
-
-.book-card strong {
+.section-label {
+    display: block;
     color: var(--mauve);
-    font-size: 18px;
-    margin-top: auto;
-    margin-bottom: 14px;
-}
-
-.book-card .btn {
-    width: 100%;
-    text-align: center;
-}
-
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories {
-    padding: 60px 0;
-    background-color: var(--light-cream);
-}
-
-.categories h2 {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 30px;
-}
-
-.category-list {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.category-list a {
-    background-color: var(--sage);
-    color: var(--chocolate);
-    padding: 13px 23px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-.category-list a:hover {
-    background-color: var(--olive);
-    color: white;
-    transform: translateY(-2px);
-}
-
-/* =========================
-   BOOK DETAILS
-========================= */
-
-.book-details-section {
-    padding: 65px 0;
-}
-
-.book-detail-card {
-    display: flex;
-    gap: 45px;
-    align-items: flex-start;
-
-    background-color: var(--light-cream);
-    padding: 35px;
-    border-radius: 20px;
-
-    box-shadow: 0 8px 25px rgba(68, 48, 37, 0.10);
-}
-
-.book-detail-card img {
-    width: 260px;
-    height: 380px;
-    object-fit: contain;
-    background-color: #f2e8dc;
-    border-radius: 14px;
-    padding: 10px;
-}
-
-.book-detail-info {
-    flex: 1;
-}
-
-.book-detail-info h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--chocolate);
-    font-size: 34px;
-    font-weight: normal;
-    margin-bottom: 22px;
-}
-
-.book-detail-info p {
-    margin-bottom: 14px;
-    line-height: 1.7;
-    color: var(--muted-text);
-}
-
-.book-detail-info strong {
-    color: var(--chocolate);
-}
-
-/* =========================
-   CART
-========================= */
-
-.cart-section {
-    padding: 60px 0;
-}
-
-.cart-section h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 35px;
-}
-
-.cart-item {
-    display: flex;
-    gap: 25px;
-
-    background-color: var(--light-cream);
-    padding: 22px;
-    margin-bottom: 18px;
-
-    border-radius: 16px;
-    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
-}
-
-.cart-item img {
-    width: 110px;
-    height: 155px;
-    object-fit: contain;
-    background-color: #f2e8dc;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.cart-item-info {
-    flex: 1;
-}
-
-.cart-item-info h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--chocolate);
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-
-.cart-item-info p {
-    color: var(--muted-text);
-    margin-bottom: 8px;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 14px 0;
-}
-
-.quantity-controls button {
-    width: 34px;
-    height: 34px;
-    border: 1px solid var(--mauve);
-    color: var(--chocolate);
-    background-color: var(--light-cream);
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 17px;
-}
-
-.quantity-controls button:hover {
-    background-color: var(--rose);
-}
-
-.remove-button {
-    background-color: var(--rose);
-    color: var(--chocolate);
-    border: none;
-    padding: 9px 16px;
-    border-radius: 25px;
-    cursor: pointer;
-}
-
-.remove-button:hover {
-    background-color: #e5adb7;
-}
-
-.cart-summary {
-    background-color: var(--light-cream);
-    padding: 25px;
-    border-radius: 16px;
-    text-align: right;
-    margin-top: 30px;
-
-    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
-}
-
-.cart-summary h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--chocolate);
-    font-size: 23px;
-    margin-bottom: 18px;
-}
-
-/* =========================
-   ORDERS
-========================= */
-
-.orders-section {
-    padding: 60px 0;
-}
-
-.orders-section h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 35px;
-}
-
-.order-card {
-    background-color: var(--light-cream);
-    padding: 27px;
-    margin-bottom: 20px;
-    border-radius: 16px;
-
-    border-left: 5px solid var(--mauve);
-
-    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
-}
-
-.order-card h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    color: var(--chocolate);
-    font-size: 23px;
-    font-weight: normal;
-    margin-bottom: 15px;
-}
-
-.order-card p {
-    color: var(--muted-text);
-    margin-bottom: 9px;
-    line-height: 1.6;
-}
-
-.order-card strong {
-    color: var(--chocolate);
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-section {
-    padding: 70px 0;
-}
-
-.about-section h2 {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 35px;
-}
-
-.about-section p {
-    max-width: 800px;
-    margin: 0 auto 20px;
-    line-height: 1.8;
-    font-size: 17px;
-    color: var(--muted-text);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background-color: var(--chocolate);
-    color: var(--cream);
-    text-align: center;
-    padding: 25px;
-    margin-top: 45px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 1000px) {
-
-    .book-grid,
-    #bookContainer {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 700px) {
-
-    header .container {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .hero {
-        padding: 70px 20px;
-    }
-
-    .hero h2 {
-        font-size: 35px;
-    }
-
-    #searchInput,
-    #categoryFilter {
-        width: 100%;
-        margin-left: 0;
-        margin-bottom: 12px;
-    }
-
-    .book-grid,
-    #bookContainer {
-        grid-template-columns: 1fr;
-    }
-
-    .book-card img {
-        height: 360px;
-    }
-
-    .book-detail-card {
-        flex-direction: column;
-    }
-
-    .book-detail-card img {
-        width: 100%;
-        max-width: 290px;
-        height: 400px;
-        margin: 0 auto;
-    }
-
-    .cart-item {
-        align-items: flex-start;
-    }
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 7px;
 }
 
 /* =========================
@@ -632,17 +157,7 @@ footer {
     margin-bottom: 35px;
 }
 
-.section-label {
-    display: block;
-    color: var(--mauve);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 7px;
-}
-
-.section-heading h2,
-.category-heading h2 {
+.section-heading h2 {
     font-family: Georgia, "Times New Roman", serif;
     color: var(--chocolate);
     font-size: 38px;
@@ -669,20 +184,19 @@ footer {
 .bestseller-card {
     position: relative;
 
-    background-color: var(--light-cream);
-    border: 1px solid rgba(168, 105, 122, 0.13);
-    border-radius: 16px;
-
-    padding: 18px;
-
-    text-decoration: none;
-    color: var(--text);
-
     display: flex;
     flex-direction: column;
     align-items: center;
 
     min-width: 0;
+    padding: 18px;
+
+    background-color: var(--light-cream);
+    border: 1px solid rgba(168, 105, 122, 0.13);
+    border-radius: 16px;
+
+    text-decoration: none;
+    color: var(--text);
 
     box-shadow: 0 5px 15px rgba(68, 48, 37, 0.08);
 
@@ -748,13 +262,21 @@ footer {
    POPULAR CATEGORIES
 ========================= */
 
+.categories {
+    padding: 70px 0;
+    background-color: #f8eeee;
+}
+
 .category-heading {
     text-align: left;
     margin-bottom: 30px;
 }
 
-.categories {
-    padding: 70px 0;
+.category-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--chocolate);
+    font-size: 38px;
+    font-weight: normal;
 }
 
 .category-list {
@@ -765,52 +287,64 @@ footer {
 
 .category-list a {
     text-align: center;
-    background-color: var(--sage);
-    color: var(--chocolate);
+    color: #4a3025;
 
-    padding: 16px 12px;
+    padding: 15px 25px;
 
     border-radius: 30px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 
-    transition: 0.2s;
+    transition: 0.3s ease;
+}
+
+.category-list a:nth-child(1) {
+    background-color: #f2cfd5;
+}
+
+.category-list a:nth-child(2) {
+    background-color: #eddcc4;
+}
+
+.category-list a:nth-child(3) {
+    background-color: #d9c0c7;
+}
+
+.category-list a:nth-child(4) {
+    background-color: #c8c99f;
+}
+
+.category-list a:nth-child(5) {
+    background-color: #e9b6bf;
+}
+
+.category-list a:nth-child(6) {
+    background-color: #c9ada7;
 }
 
 .category-list a:hover {
-    background-color: var(--olive);
-    color: white;
     transform: translateY(-3px);
-}
-
-@media (max-width: 1100px) {
-    .bestseller-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .category-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-    .section-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .bestseller-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .category-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    box-shadow: 0 5px 12px rgba(68, 48, 37, 0.15);
 }
 
 /* =========================
-   BOOK SEARCH & FILTER
+   BOOKS PAGE
+========================= */
+
+.books-section {
+    padding: 50px 0 70px;
+}
+
+.books-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--chocolate);
+    font-size: 36px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   BOOK FILTER CHIPS
 ========================= */
 
 .filter-panel {
@@ -818,7 +352,7 @@ footer {
     border: 1px solid rgba(168, 105, 122, 0.14);
     border-radius: 18px;
 
-    padding: 24px 26px;
+    padding: 25px;
     margin-bottom: 35px;
 
     box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
@@ -834,21 +368,9 @@ footer {
     color: var(--chocolate);
 }
 
-.filter-title p {
-    color: var(--muted-text);
-    font-size: 14px;
-    margin-top: 6px;
-}
-
-.filter-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
 .search-box {
     position: relative;
-    flex: 1;
+    margin-top: 18px;
 }
 
 .search-icon {
@@ -869,226 +391,235 @@ footer {
 
     padding: 0 15px 0 45px;
 
-    margin: 0;
-
     border: 1px solid #d4c1b3;
     border-radius: 25px;
 
     background-color: white;
 }
 
-#categoryFilter {
-    width: 210px;
-    height: 46px;
+#searchInput:focus {
+    outline: none;
+    border-color: var(--mauve);
+    box-shadow: 0 0 0 3px rgba(168, 105, 122, 0.13);
+}
 
-    padding: 0 15px;
+.category-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
 
-    margin: 0;
+.category-chip {
+    border: none;
 
-    border: 1px solid #d4c1b3;
-    border-radius: 25px;
+    padding: 9px 16px;
 
-    background-color: white;
+    border-radius: 999px;
+
+    background-color: #f2e4df;
+    color: var(--chocolate);
 
     cursor: pointer;
+    font-weight: 600;
+
+    transition: 0.2s;
 }
 
-#searchInput:focus,
-#categoryFilter:focus {
-    outline: none;
-
-    border-color: var(--mauve);
-
-    box-shadow:
-        0 0 0 3px rgba(168, 105, 122, 0.13);
+.category-chip:nth-child(2) {
+    background-color: #f2cfd5;
 }
 
-@media (max-width: 700px) {
+.category-chip:nth-child(3) {
+    background-color: #eddcc4;
+}
 
-    .filter-controls {
-        flex-direction: column;
-    }
+.category-chip:nth-child(4) {
+    background-color: #d9c0c7;
+}
 
-    .search-box,
-    #categoryFilter {
-        width: 100%;
-    }
+.category-chip:nth-child(5) {
+    background-color: #c8c99f;
+}
+
+.category-chip:nth-child(6) {
+    background-color: #c9ada7;
+}
+
+.category-chip:nth-child(7) {
+    background-color: #e9b6bf;
+}
+
+.category-chip:nth-child(8) {
+    background-color: #d8caa8;
+}
+
+.category-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(68, 48, 37, 0.12);
+}
+
+.category-chip.active {
+    background-color: var(--chocolate);
+    color: white;
 }
 
 /* =========================
-   ABOUT PAGE
+   BOOK GRID
 ========================= */
 
-.about-section {
-    padding: 75px 0;
-}
-
-/* Intro */
-
-.about-hero {
-    max-width: 760px;
-    margin: 0 auto 65px;
-    text-align: center;
-}
-
-.about-hero h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 42px;
-    font-weight: normal;
-    color: var(--chocolate);
-
-    margin: 10px 0 18px;
-}
-
-.about-hero p {
-    color: var(--muted-text);
-    font-size: 17px;
-    line-height: 1.8;
-
-    margin-bottom: 25px;
-}
-
-
-/* Three cards */
-
-.about-grid {
+.book-grid,
+#bookContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-    margin-bottom: 65px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
 }
 
-.about-card {
+/* =========================
+   BOOK CARD
+========================= */
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
     background-color: var(--light-cream);
-
-    padding: 35px 28px;
-
+    border: 1px solid rgba(68, 48, 37, 0.07);
     border-radius: 18px;
 
-    text-align: center;
-
-    border: 1px solid rgba(168, 105, 122, 0.12);
+    padding: 16px;
+    overflow: hidden;
 
     box-shadow:
-        0 5px 16px rgba(68, 48, 37, 0.08);
+        0 4px 10px rgba(68, 48, 37, 0.06),
+        0 10px 25px rgba(68, 48, 37, 0.06);
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-.about-card:hover {
-    transform: translateY(-5px);
+.book-card:hover {
+    transform: translateY(-7px);
 
     box-shadow:
-        0 12px 25px rgba(68, 48, 37, 0.13);
+        0 8px 18px rgba(68, 48, 37, 0.10),
+        0 15px 30px rgba(68, 48, 37, 0.10);
 }
 
-.about-icon {
-    width: 60px;
-    height: 60px;
+.book-card img {
+    width: 100%;
+    height: 310px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: contain;
 
-    margin: 0 auto 20px;
+    background-color: #f2e8dc;
+    border-radius: 12px;
 
-    background-color: rgba(242, 194, 202, 0.45);
-
-    border-radius: 50%;
-
-    font-size: 27px;
+    margin-bottom: 18px;
+    padding: 8px;
 }
 
-.about-card:nth-child(2) .about-icon {
-    background-color: rgba(183, 187, 136, 0.35);
-}
-
-.about-card:nth-child(3) .about-icon {
-    background-color: rgba(237, 223, 196, 0.8);
-}
-
-.about-card h3 {
+.book-card h3 {
     font-family: Georgia, "Times New Roman", serif;
-
     color: var(--chocolate);
 
-    font-size: 23px;
-
-    margin-bottom: 12px;
-}
-
-.about-card p {
-    color: var(--muted-text);
-
-    line-height: 1.7;
-
-    font-size: 15px;
-}
-
-
-/* Technical section */
-
-.about-tech {
-    max-width: 850px;
-
-    margin: 0 auto;
-
-    padding: 40px;
-
-    background:
-        linear-gradient(135deg,
-            rgba(242, 194, 202, 0.25),
-            rgba(183, 187, 136, 0.20));
-
-    border-radius: 20px;
-
-    border: 1px solid rgba(168, 105, 122, 0.12);
-}
-
-.about-tech h3 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    color: var(--chocolate);
-
-    font-size: 28px;
+    font-size: 21px;
     font-weight: normal;
+    line-height: 1.3;
 
-    margin: 8px 0 18px;
+    margin-bottom: 8px;
 }
 
-.about-tech p {
+.book-card p {
     color: var(--muted-text);
-
-    line-height: 1.8;
-
-    margin-bottom: 12px;
+    font-size: 14px;
+    margin-bottom: 7px;
 }
 
+.book-card strong {
+    color: var(--mauve);
+    font-size: 18px;
 
-/* Mobile */
+    margin-top: auto;
+    margin-bottom: 14px;
+}
 
-@media (max-width: 800px) {
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-hero h2 {
-        font-size: 34px;
-    }
-
-    .about-tech {
-        padding: 28px;
-    }
+.book-card .btn {
+    width: 100%;
+    text-align: center;
 }
 
 /* =========================
-   CART LAYOUT
+   BOOK DETAILS
 ========================= */
+
+.book-details-section {
+    padding: 65px 0;
+}
+
+.book-detail-card {
+    display: flex;
+    gap: 45px;
+    align-items: flex-start;
+
+    background-color: var(--light-cream);
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(68, 48, 37, 0.10);
+}
+
+.book-detail-card img {
+    width: 260px;
+    height: 380px;
+
+    object-fit: contain;
+
+    background-color: #f2e8dc;
+
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.book-detail-info {
+    flex: 1;
+}
+
+.book-detail-info h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--chocolate);
+
+    font-size: 34px;
+    font-weight: normal;
+
+    margin-bottom: 22px;
+}
+
+.book-detail-info p {
+    margin-bottom: 14px;
+
+    line-height: 1.7;
+
+    color: var(--muted-text);
+}
+
+.book-detail-info strong {
+    color: var(--chocolate);
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-section {
+    padding: 60px 0;
+}
 
 .cart-section h2 {
     font-family: Georgia, "Times New Roman", serif;
@@ -1101,18 +632,25 @@ footer {
 
 .cart-section h2::after {
     content: "";
+
     display: block;
+
     width: 55px;
     height: 3px;
+
     background-color: var(--mauve);
+
     border-radius: 10px;
+
     margin: 12px auto 0;
 }
 
 .cart-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.8fr);
+
     gap: 28px;
+
     align-items: start;
 }
 
@@ -1123,13 +661,49 @@ footer {
 }
 
 .cart-item {
-    margin: 0;
+    display: flex;
+    gap: 25px;
+
     min-height: 190px;
+
+    background-color: var(--light-cream);
+
+    padding: 22px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
 }
 
 .cart-item img {
     width: 120px;
     height: 165px;
+
+    object-fit: contain;
+
+    background-color: #f2e8dc;
+
+    border-radius: 10px;
+
+    padding: 5px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--chocolate);
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.cart-item-info p {
+    color: var(--muted-text);
+    margin-bottom: 8px;
 }
 
 .cart-author {
@@ -1138,7 +712,9 @@ footer {
 
 .cart-price {
     font-family: Georgia, "Times New Roman", serif;
+
     color: var(--mauve) !important;
+
     font-size: 19px;
     font-weight: bold;
 }
@@ -1146,26 +722,43 @@ footer {
 .cart-actions {
     display: flex;
     align-items: center;
+
     gap: 16px;
+
     margin-top: 15px;
 }
 
 .quantity-controls {
     display: inline-flex;
     align-items: center;
+
     gap: 0;
     margin: 0;
 
     border: 1px solid rgba(168, 105, 122, 0.45);
+
     border-radius: 25px;
+
     overflow: hidden;
 }
 
 .quantity-controls button {
-    border: none;
-    border-radius: 0;
     width: 38px;
     height: 36px;
+
+    border: none;
+    border-radius: 0;
+
+    color: var(--chocolate);
+
+    background-color: var(--light-cream);
+
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.quantity-controls button:hover {
+    background-color: var(--rose);
 }
 
 .quantity-controls span {
@@ -1173,18 +766,45 @@ footer {
     text-align: center;
 }
 
+.remove-button {
+    background-color: var(--rose);
+    color: var(--chocolate);
+
+    border: none;
+
+    padding: 9px 16px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: #e5adb7;
+}
+
 .cart-summary {
     position: sticky;
     top: 25px;
 
-    margin: 0;
-    text-align: left;
+    background-color: var(--light-cream);
 
     padding: 28px;
+
+    border-radius: 16px;
+
+    text-align: left;
+
+    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
 }
 
 .cart-summary h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--chocolate);
+
     font-size: 25px;
+
     margin-bottom: 25px;
 }
 
@@ -1205,14 +825,19 @@ footer {
 
 .summary-divider {
     height: 1px;
+
     background-color: #e3d5ca;
+
     margin: 20px 0;
 }
 
 .summary-total {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 21px;
+
     color: var(--chocolate);
+
     font-weight: bold;
 }
 
@@ -1229,8 +854,11 @@ footer {
 
 .empty-cart {
     background-color: var(--light-cream);
+
     border-radius: 18px;
+
     padding: 55px 30px;
+
     text-align: center;
 
     box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
@@ -1238,8 +866,11 @@ footer {
 
 .empty-cart h3 {
     font-family: Georgia, "Times New Roman", serif;
+
     color: var(--chocolate);
+
     font-size: 25px;
+
     margin-bottom: 10px;
 }
 
@@ -1248,37 +879,39 @@ footer {
     margin-bottom: 22px;
 }
 
-@media (max-width: 850px) {
-
-    .cart-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .cart-summary {
-        position: static;
-    }
-}
-
 /* =========================
-   ORDERS PAGE
+   ORDERS
 ========================= */
+
+.orders-section {
+    padding: 60px 0;
+}
 
 .orders-section h2 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 42px;
     font-weight: normal;
+
     color: var(--chocolate);
+
     text-align: center;
+
     margin-bottom: 42px;
 }
 
 .orders-section h2::after {
     content: "";
+
     display: block;
+
     width: 55px;
     height: 3px;
+
     background-color: var(--mauve);
+
     border-radius: 10px;
+
     margin: 12px auto 0;
 }
 
@@ -1288,19 +921,22 @@ footer {
 
     display: flex;
     flex-direction: column;
+
     gap: 20px;
 }
 
 .order-card {
+    background-color: var(--light-cream);
+
     padding: 0;
     margin: 0;
 
     overflow: hidden;
 
-    border-left: none;
     border: 1px solid rgba(168, 105, 122, 0.13);
-
     border-radius: 16px;
+
+    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
 }
 
 .order-card-header {
@@ -1316,9 +952,14 @@ footer {
 }
 
 .order-card-header h3 {
-    margin: 0 0 5px;
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--chocolate);
 
     font-size: 22px;
+    font-weight: normal;
+
+    margin: 0 0 5px;
 }
 
 .order-date {
@@ -1424,155 +1065,239 @@ footer {
     margin-bottom: 20px;
 }
 
-.category-list a {
-    color: #4a3025;
-    padding: 15px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    padding: 75px 0;
 }
 
-/* Fiction */
-.category-list a:nth-child(1) {
-    background-color: #f2cfd5;
+.about-hero {
+    max-width: 760px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
 }
 
-/* Classics */
-.category-list a:nth-child(2) {
-    background-color: #eddcc4;
+.about-hero h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+    font-weight: normal;
+
+    color: var(--chocolate);
+
+    margin: 10px 0 18px;
 }
 
-/* Science */
-.category-list a:nth-child(3) {
-    background-color: #d9c0c7;
+.about-hero p {
+    color: var(--muted-text);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
 }
 
-/* Technology */
-.category-list a:nth-child(4) {
-    background-color: #c8c99f;
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 65px;
 }
 
-/* Romance */
-.category-list a:nth-child(5) {
-    background-color: #e9b6bf;
+.about-card {
+    background-color: var(--light-cream);
+
+    padding: 35px 28px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    border: 1px solid rgba(168, 105, 122, 0.12);
+
+    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-/* Mystery */
-.category-list a:nth-child(6) {
-    background-color: #c9ada7;
+.about-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 25px rgba(68, 48, 37, 0.13);
 }
 
-.category-list a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(68, 48, 37, 0.15);
+.about-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background-color: rgba(242, 194, 202, 0.45);
+
+    border-radius: 50%;
+
+    font-size: 27px;
 }
 
-.categories {
-    background-color: #f8eeee;
+.about-card:nth-child(2) .about-icon {
+    background-color: rgba(183, 187, 136, 0.35);
+}
+
+.about-card:nth-child(3) .about-icon {
+    background-color: rgba(237, 223, 196, 0.8);
+}
+
+.about-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--chocolate);
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: var(--muted-text);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: var(--chocolate);
+    color: var(--cream);
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 45px;
 }
 
 /* =========================
-   BOOK FILTER CHIPS
+   RESPONSIVE
 ========================= */
 
-.filter-panel {
-    background-color: var(--light-cream);
-    border: 1px solid rgba(168, 105, 122, 0.14);
-    border-radius: 18px;
-    padding: 25px;
-    margin-bottom: 35px;
-    box-shadow: 0 5px 16px rgba(68, 48, 37, 0.08);
+@media (max-width: 1100px) {
+
+    .bestseller-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .category-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.filter-title span {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
-    color: var(--chocolate);
+@media (max-width: 1000px) {
+
+    .book-grid,
+    #bookContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.search-box {
-    position: relative;
-    margin-top: 18px;
+@media (max-width: 850px) {
+
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        position: static;
+    }
 }
 
-.search-icon {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--mauve);
-    font-size: 20px;
+@media (max-width: 800px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h2 {
+        font-size: 34px;
+    }
+
+    
 }
 
-#searchInput {
-    width: 100%;
-    height: 46px;
-    padding: 0 15px 0 45px;
-    border: 1px solid #d4c1b3;
-    border-radius: 25px;
-    background-color: white;
-    margin: 0;
-}
+@media (max-width: 700px) {
 
-#searchInput:focus {
-    outline: none;
-    border-color: var(--mauve);
-    box-shadow: 0 0 0 3px rgba(168, 105, 122, 0.13);
-}
+    header .container {
+        flex-direction: column;
+        gap: 18px;
+    }
 
-.category-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 18px;
-}
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
 
-.category-chip {
-    border: none;
-    padding: 9px 16px;
-    border-radius: 999px;
-    background-color: #f2e4df;
-    color: var(--chocolate);
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.2s;
-}
+    .hero {
+        padding: 70px 20px;
+    }
 
-.category-chip:nth-child(2) {
-    background-color: #f2cfd5;
-}
+    .hero h2 {
+        font-size: 35px;
+    }
 
-.category-chip:nth-child(3) {
-    background-color: #eddcc4;
-}
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
 
-.category-chip:nth-child(4) {
-    background-color: #d9c0c7;
-}
+    .bestseller-grid {
+        grid-template-columns: 1fr;
+    }
 
-.category-chip:nth-child(5) {
-    background-color: #c8c99f;
-}
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.category-chip:nth-child(6) {
-    background-color: #c9ada7;
-}
+    .book-grid,
+    #bookContainer {
+        grid-template-columns: 1fr;
+    }
 
-.category-chip:nth-child(7) {
-    background-color: #e9b6bf;
-}
+    .book-card img {
+        height: 360px;
+    }
 
-.category-chip:nth-child(8) {
-    background-color: #d8caa8;
-}
+    .book-detail-card {
+        flex-direction: column;
+    }
 
-.category-chip:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(68, 48, 37, 0.12);
-}
+    .book-detail-card img {
+        width: 100%;
+        max-width: 290px;
+        height: 400px;
+        margin: 0 auto;
+    }
 
-.category-chip.active {
-    background-color: var(--chocolate);
-    color: white;
+    .cart-item {
+        align-items: flex-start;
+    }
 }
